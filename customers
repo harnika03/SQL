@@ -1,0 +1,52 @@
+create table customers(
+    emp_id int primary key,
+    name varchar(50),
+    department varchar(50),
+    city varchar(50),
+    salary int
+);
+
+insert into customers values (102,'harry','hr','Hyderabad',40000)
+insert into customers values (103,'roshan','it','Delhi',68000)
+insert into customers values (104,'Arun','Finance','Mumbai',78000)
+insert into customers values (105,'srinu','Finance','Banglore',80000)
+
+update customers 
+set phoneno = case
+when emp_id=101 then 895437
+when emp_id=102 then 5787
+when emp_id=103 then 5785676
+when emp_id=104 then 578757
+when emp_id=105 then 5787667
+else phoneno
+end
+
+update customers 
+set
+department= case
+when emp_id = 101 then 'admin'
+when emp_id = 102 then 'developer'
+when emp_id = 103 then 'testing'
+when emp_id = 104 then 'programmer'
+when emp_id = 105 then 'qa'
+else department
+end,
+salary=case
+when emp_id=101 then '75000'
+when emp_id=102 then '28000'
+when emp_id=103 then '29000'
+when emp_id=104 then '90000'
+when emp_id=105 then '35000'
+else salary
+end,
+
+
+
+
+
+| emp_id | name  | department | city      | salary    |
+| ------ | ----- | ---------- | --------- | --------- |
+| 101    | Ravi  | IT         | Hyderabad | 58000 |
+| 102    | Sita  | HR         | Chennai   | 45000     |
+| 103    | Arjun | IT         | Bangalore | 60000     |
+| 104    | Meena | Finance    | Mumbai    | 55000     |
